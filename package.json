@@ -1,6 +1,6 @@
 {
   "name": "@duoa/vue-color-picker",
-  "version": "1.0.3",
+  "version": "1.0.1",
   "description": "Color Picker base on Vue2.x",
   "author": "Duoani <duoani@126.com>",
   "keywords": ["vue", "color picker", "color-picker"],
