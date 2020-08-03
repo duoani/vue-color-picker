@@ -37,7 +37,7 @@ Declare the component
 export default {
   data () {
     return {
-      color: '#ff00ff
+      color: '#ff00ff'
     }
   }
 }
