@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>@duoa/vue-color-picker</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/@duoa/vue-color-picker@1.0.0/dist/vue-color-picker.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@duoa/vue-color-picker@1.0.0/dist/vue-color-picker.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <template>
+      <vue-color-picker
+        v-model="value"
+        @close="handleClose"
+      />
+    </template>
+  </div>
+  <script>
+    var Main = {
+      data () {
+        return {
+          value: '#ff00ff'
+        }
+      },
+      methods: {
+        handleClose () {
+          console.log('picker close')
+        }
+      }
+    }
+    var Ctor = Vue.extend(Main)
+    new Ctor().$mount('#app')
+  </script>
+</body>
+
+</html>
