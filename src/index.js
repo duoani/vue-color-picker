@@ -1,4 +1,5 @@
 import Main from './Main'
+import ColorCtor from './Color'
 
 const plugin = Vue => {
   Vue.component('VueColorPicker', Main)
@@ -7,6 +8,8 @@ const plugin = Vue => {
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(plugin)
 }
+
+export const Color = ColorCtor
 
 export const component = Main
 
