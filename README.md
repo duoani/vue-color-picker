@@ -67,6 +67,8 @@ Vue.component('MyColorPicker', component)
 | disabled  | boolean | false | -- | whether to disable the picker |
 | appendToBody  | boolean | false | -- | whether to append picker popup itself to body. A nested picker popup should have this attribute set to `true` |
 | predefine  | array | [] | -- | predefined color options |
+| stop  | boolean | false | -- | stopPropagation when mousedown or click on popup |
+| prevent  | boolean | false | -- | preventDefault when mousedown or click on popup |
 
 ## Events
 | Event Name | Description | Parameters |

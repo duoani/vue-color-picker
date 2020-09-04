@@ -32,6 +32,8 @@ export default {
     showAlpha: Boolean,
     colorFormat: String,
     disabled: Boolean,
+    stop: Boolean,
+    prevent: Boolean,
     appendToBody: Boolean,
     // 预定义的颜色列表
     predefine: {
@@ -88,7 +90,7 @@ export default {
       this.$emit('before-open')
       const me = this
       this.showPicker = !this.showPicker
-      const { color, showAlpha, predefine, history, $el } = this
+      const { color, showAlpha, predefine, history, $el, stop, prevent } = this
       const rect = $el.getBoundingClientRect()
       var dropdown
       var vm
@@ -96,12 +98,14 @@ export default {
       const VuePickerDropdown = Vue.extend({
         render (h) {
           const props = {
-            color: color,
-            showAlpha: showAlpha,
+            color,
+            showAlpha,
             history: history.stack,
             predefine,
             top: rect.top + rect.height,
-            left: rect.left
+            left: rect.left,
+            stop,
+            prevent
           }
           return h(PickerDropdown, {
             props,

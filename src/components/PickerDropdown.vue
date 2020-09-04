@@ -1,5 +1,9 @@
 <template>
-  <div class="cpicker__dropdown">
+  <div
+    class="cpicker__dropdown"
+    @mousedown="handleMouseDown"
+    @click="handleClick"
+  >
     <div
       class="cpicker__mask"
       @click="handleClose"
@@ -90,7 +94,9 @@ export default {
     history: Array,
     predefine: Array,
     top: Number,
-    left: Number
+    left: Number,
+    stop: Boolean,
+    prevent: Boolean
   },
 
   data () {
@@ -126,6 +132,22 @@ export default {
     },
     handleClose () {
       this.$emit('close')
+    },
+    handleMouseDown (e) {
+      if (this.stop) {
+        e.stopPropagation()
+      }
+      if (this.prevent) {
+        e.preventDefault()
+      }
+    },
+    handleClick (e) {
+      if (this.stop) {
+        e.stopPropagation()
+      }
+      if (this.prevent) {
+        e.preventDefault()
+      }
     }
   }
 }
